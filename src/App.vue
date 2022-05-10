@@ -1,11 +1,30 @@
 <template>
     <div id="app">
         <el-container class="app-out-pannel">
-            <el-header class="sys-header">一张图项目</el-header>
+            <el-header class="sys-header">一张图系统</el-header>
             <el-container class="app-content-pannel">
-                <el-aside width="200px" class="sys-menu">左侧菜单</el-aside>
+                <el-aside width="200px" class="sys-menu">
+                    <el-menu
+                        default-active="1"
+                        class="el-menu-vertical-demo"
+                        @select="handleMenuSelect"
+                        background-color="#545c64"
+                        text-color="#fff"
+                        active-text-color="#ffd04b"
+                        :collapse="true"
+                    >
+                        <el-menu-item index="1">
+                            <i class="el-icon-monitor"></i>
+                            <span slot="title">首页大屏</span>
+                        </el-menu-item>
+                        <el-menu-item index="2">
+                            <i class="el-icon-picture-outline"></i>
+                            <span slot="title">一张图</span>
+                        </el-menu-item>
+                    </el-menu>
+                </el-aside>
                 <el-main class="sys-content">
-                    <Mapview />
+                    <router-view></router-view>
                 </el-main>
             </el-container>
         </el-container>
@@ -13,12 +32,17 @@
 </template>
 
 <script>
-import Mapview from './components/common/Mapview';
-
 export default {
     name: 'App',
-    components: {
-        Mapview,
+    components: {},
+    methods: {
+        handleMenuSelect(index) { 
+            if (index === '1') {
+                this.$router.push('/');
+            } else if (index === '2') {
+                this.$router.push('/onemap');
+            }
+        },
     },
 };
 </script>
@@ -38,16 +62,19 @@ body,
     height: 100%;
 }
 .sys-header {
-    background: #409eff;
+    background: #32373e;
     line-height: 60px;
     color: #fff;
     font-size: 20px;
+    font-weight: 600;
 }
 .sys-menu {
-    background: #c0c4cc;
+    background-color: #545c64;
+    width: 64px !important;
+    overflow: hidden !important;
 }
 
-.sys-content{
-  padding: 5px !important;
+.sys-content {
+    padding: 5px !important;
 }
 </style>
