@@ -81,6 +81,8 @@ export default {
             mapview.ui.components = [];
 
             console.log(mapview);
+
+            this.$store.commit('_setDefaultView',mapview);
         },
     },
 };
