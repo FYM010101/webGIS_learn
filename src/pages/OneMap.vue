@@ -3,13 +3,15 @@
         <MapView />
         <MapTools />
         <MapTree /> 
+        <XZQHComponent />
     </div>
 </template>
 
 <script>
-import MapView from './../components/common/Mapview';
+import MapView from './../components/common/MapView';
 import MapTools from './../components/MapTools';
 import MapTree from './../components/MapTree';
+import XZQHComponent from './../components/XZQHComponent';
 
 export default {
     name: 'OneMap',
@@ -17,6 +19,7 @@ export default {
         MapView,
         MapTools,
         MapTree,
+        XZQHComponent,
     },
     mothods: {},
 };

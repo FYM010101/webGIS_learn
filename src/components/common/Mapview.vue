@@ -16,7 +16,7 @@ const options = {
 };
 
 export default {
-    name: 'Map-view',
+    name: 'MapView',
     components: {},
     mounted: function () {
         this._createMapView();

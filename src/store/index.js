@@ -8,6 +8,7 @@ const state = {
 
     _defaultView: '',       //默认地图View
     _defaultMapTreeVisible: false,  //目录树默认不显示
+    _defaultXZQHComponentVisible: false,
 };
 
 const getters = {
@@ -17,7 +18,10 @@ const getters = {
     },
     _getDefaultMapTreeVisible() {
         return state._defaultMapTreeVisible;
-    }
+    },
+    _getDefaultXZQHComponentVisible() {
+        return state._defaultXZQHComponentVisible;
+    },
 };
 
 const mutations = {
@@ -27,7 +31,10 @@ const mutations = {
     },
     _setDefaultMapTreeVisible(state, value) {
         state._defaultMapTreeVisible = value;
-    }
+    },
+    _setDefaultXZQHComponentVisible(state, value) {
+        state._defaultXZQHComponentVisible = value;
+    },
 };
 
 const store = new Vuex.Store({

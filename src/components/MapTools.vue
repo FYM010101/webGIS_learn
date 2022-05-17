@@ -11,28 +11,35 @@
 <script>
 export default {
     name: 'MapTools',
-    methods:{
-       handleMapToolsitemClick(e){
-           console.log(e.target.id);
-           switch(e.target.id){
-               case 'xzqh':
-                   break;
-               case 'maptree':
-                   this.open();
-                   break; 
-               case 'distance':
-                   break;     
-               case 'area':
-                   break;    
-               case 'clear':
-                   break;    
-           }
-       },
-        open(){
-            const currentVisible = this.$store.getters._getDefaultMapTreeVisible;
-            this.$store.commit('_setDefaultMapTreeVisible',!currentVisible);
-        }
-    }
+    methods: {
+        handleMapToolsitemClick(e) {
+            console.log(e.target.id);
+            switch (e.target.id) {
+                case 'xzqh':
+                    this.openXZQHComponentPannel();
+                    break;
+                case 'maptree':
+                    this.openMapTreePanel();
+                    break;
+                case 'distance':
+                    break;
+                case 'area':
+                    break;
+                case 'clear':
+                    break;
+                default:
+                    break;
+            }
+        },
+        openMapTreePanel() {
+            let currentVisible = this.$store.getters._getDefaultMapTreeVisible;
+            this.$store.commit('_setDefaultMapTreeVisible', !currentVisible);
+        },
+        openXZQHComponentPannel() {
+            let currentVisible = this.$store.getters._getDefaultXZQHComponentVisible;
+            this.$store.commit('_setDefaultXZQHComponentVisible', !currentVisible);
+        },
+    },
 };
 </script>
 
